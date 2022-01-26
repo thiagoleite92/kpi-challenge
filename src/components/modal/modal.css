@@ -20,7 +20,7 @@
 }
 
 .modal-title {
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .modal-form {
@@ -32,7 +32,7 @@
 }
 
 .modal-input {
-  margin: 20px 10px;
+  margin: 15px 10px;
   height: 30px;
   padding: 5px;
 }
@@ -45,7 +45,7 @@
   border: none;
   border-radius: 5px;
   width: 200px;
-  margin: 50px auto;
+  margin: 25px auto;
   background-color: #0067ac;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
@@ -64,8 +64,16 @@
   border: none;
   border-radius: 5px;
   width: 200px;
-  margin: auto;
+  margin: 20px auto;
   background-color: #ac0600;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
+}
+
+.warning-message {
+  color: #0067ac;
+  width: 300px;
+  text-align: center;
+  margin-bottom: 20px;
+  position: absolute;
 }

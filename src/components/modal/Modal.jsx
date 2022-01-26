@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { useNavigate } from 'react-router-dom'
 import './modal.css'
 import MainContext from '../../context/MainContext'
+import Message from './Message'
 
 function Modal ({ setModal }) {
   const navigate = useNavigate()
@@ -35,10 +36,9 @@ function Modal ({ setModal }) {
         </h1>
         <form className='modal-form'>
           <label>
-            Nome:
             <input
               type='text'
-              autoFocus placeholder='Maria Joaquina'
+              autoFocus placeholder='Seu nome'
               maxLength='25'
               minLength='15'
               className='modal-input'
@@ -48,10 +48,9 @@ function Modal ({ setModal }) {
             />
           </label>
           <label>
-            Email:
             <input
               type='email'
-              placeholder='joaquinamaria@email.com'
+              placeholder='email@exemplo.com'
               className='modal-input'
               maxLength='25'
               value={userInfo.email}
@@ -67,6 +66,11 @@ function Modal ({ setModal }) {
           >
             Confirmar
           </button>
+          {
+            continueButton
+              ? <Message />
+              : null
+          }
           <button
             type='button'
             onClick={() => redirectHomePage()}
