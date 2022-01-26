@@ -6,7 +6,7 @@ import MainContext from '../../context/MainContext'
 
 function Modal ({ setModal }) {
   const navigate = useNavigate()
-  const { userInfo, setUserInfo } = useContext(MainContext)
+  const { userInfo, setUserInfo, continueButton } = useContext(MainContext)
 
   const handleInputChange = ({ target }) => {
     const { name, value } = target
@@ -57,6 +57,7 @@ function Modal ({ setModal }) {
           </label>
           <button
             type='button'
+            disabled={continueButton}
             onClick={() => setModal(false)}
             className='modal-btn-continue'
           >

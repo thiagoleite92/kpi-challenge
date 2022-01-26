@@ -48,6 +48,12 @@
   margin: 50px auto;
   background-color: #0067ac;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+}
+
+.modal-btn-continue:disabled {
+  background-color: #c8c3c3;
+  color:#5e6366
 }
 
 .modal-btn-exit {
@@ -61,4 +67,5 @@
   margin: auto;
   background-color: #ac0600;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
 }

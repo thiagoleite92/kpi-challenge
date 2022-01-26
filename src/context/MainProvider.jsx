@@ -7,12 +7,14 @@ function MainProvider ({ children }) {
     name: '',
     email: ''
   })
+  const [continueButton] = useState(true)
 
   console.log(userInfo)
 
   const context = {
     userInfo,
-    setUserInfo
+    setUserInfo,
+    continueButton
   }
 
   return (
