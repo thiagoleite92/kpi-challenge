@@ -1,49 +1,43 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import MainContext from '../../context/MainContext'
 
 function SecondQuestion () {
+  const { setAnswers } = useContext(MainContext)
+
+  const handleOptions = ({ target: { name, value } }) => {
+    setAnswers((oldState) => ({
+      ...oldState,
+      [name]: value
+    }))
+  }
+  const renderOptions = (value) => {
+    return (
+      <label>
+        <input type='radio' name='secondQuestion' value={value} onChange={handleOptions} />
+        {value}
+      </label>
+    )
+  }
+
   return (
     <>
-      Segunda pergunta
-      <form className='first-question'>
-        Qual seu nível de satisfação com a empresa?
+      <h1>Segunda pergunta</h1>
+      <form className='second-question'>
+        <h4>Qual seu nível de satisfação com a empresa?</h4>
         <label>
-          <input type='radio' name='first-question' value='1' />
+          <input type='radio' name='secondQuestion' value={1} onChange={handleOptions} />
           1 - Pouco Satisfeito
         </label>
+        {renderOptions(2)}
+        {renderOptions(3)}
+        {renderOptions(4)}
+        {renderOptions(5)}
+        {renderOptions(6)}
+        {renderOptions(7)}
+        {renderOptions(8)}
+        {renderOptions(9)}
         <label>
-          <input type='radio' name='first-question' value='2' />
-          2
-        </label>
-        <label>
-          <input type='radio' name='first-question' value='3' />
-          3
-        </label>
-        <label>
-          <input type='radio' name='first-question' value='4' />
-          4
-        </label>
-        <label>
-          <input type='radio' name='first-question' value='5' />
-          5 - Satisfação média
-        </label>
-        <label>
-          <input type='radio' name='first-question' value='6' />
-          6
-        </label>
-        <label>
-          <input type='radio' name='first-question' value='7' />
-          7
-        </label>
-        <label>
-          <input type='radio' name='first-question' value='8' />
-          8
-        </label>
-        <label>
-          <input type='radio' name='first-question' value='9' />
-          9
-        </label>
-        <label>
-          <input type='radio' name='first-question' value='10' />
+          <input type='radio' name='secondQuestion' value={10} onChange={handleOptions} />
           10 - Muito Satisfeito
         </label>
       </form>

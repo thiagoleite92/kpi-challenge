@@ -3,9 +3,9 @@ import React from 'react'
 function FirstQuestion () {
   return (
     <>
-      Primeira Pergunta
+      <h1>Primeira Pergunta</h1>
       <form className='first-question'>
-        Quantas pessoas tem na equipe que você está?
+        <h4>Quantas pessoas tem na equipe que você está?</h4>
         <label>
           <input type='radio' name='first-question' value='1-3' />
           Entre 1 e 3

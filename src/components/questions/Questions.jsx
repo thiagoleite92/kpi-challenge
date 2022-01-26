@@ -4,12 +4,13 @@ import './questions.css'
 
 function Questions () {
   const [questionPosition, setQuestPosition] = useState(0)
-  console.log(setQuestPosition)
   return (
     <main className='questions-container'>
       <MapQuestions questionPosition={questionPosition} />
-      <button onClick={() => setQuestPosition(questionPosition + 1)}>Proxima</button>
-      <button onClick={() => setQuestPosition(questionPosition - 1)}>Anterior</button>
+      <div className='btn-question-container'>
+        <button onClick={() => setQuestPosition(questionPosition - 1)}>Anterior</button>
+        <button onClick={() => setQuestPosition(questionPosition + 1)}>Proxima</button>
+      </div>
     </main>
   )
 }

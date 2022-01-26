@@ -14,3 +14,12 @@
   border: solid 1px #0067ac;
   padding: 10px;
 }
+
+.second-question {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  border: solid 1px #0067ac;
+  padding: 10px;
+}

@@ -8,12 +8,18 @@ function MainProvider ({ children }) {
     name: '',
     email: ''
   })
+
   const [headerInfo, setHeaderInfo] = useState({
     name: '',
     email: ''
   })
 
-  console.log(headerInfo, userInfo)
+  const [answers, setAnswers] = useState({
+    firstQuestion: '',
+    secondQuestion: ''
+  })
+
+  console.log(answers)
 
   const [continueButton, setContinueButton] = useState(true)
 
@@ -33,7 +39,9 @@ function MainProvider ({ children }) {
     continueButton,
     setContinueButton,
     headerInfo,
-    setHeaderInfo
+    setHeaderInfo,
+    answers,
+    setAnswers
   }
 
   return (
