@@ -1,12 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../components/header/Header'
+import Modal from '../components/modal/Modal'
 
-function Home () {
+function Forms () {
+  const [modal, setModal] = useState(true)
+  console.log(setModal)
+
+  const renderForms = () => {
+    return (
+      <Header />
+    )
+  }
+
   return (
     <>
-      <Header />
+      {
+        modal
+          ? <Modal />
+          : renderForms()
+      }
     </>
   )
 }
 
-export default Home
+export default Forms
