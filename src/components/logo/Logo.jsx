@@ -1,6 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-// eslint-disable-next-line react/prop-types
 function Logo ({ home }) {
   return (
     <svg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg' className={home ? 'main-logo' : null}>
@@ -8,5 +8,9 @@ function Logo ({ home }) {
     </svg>
   )
 }
+
+Logo.propTypes = {
+  setModal: PropTypes.string
+}.isRequired
 
 export default Logo
