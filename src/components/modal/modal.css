@@ -33,6 +33,8 @@
 
 .modal-input {
   margin: 20px 10px;
+  height: 30px;
+  padding: 5px;
 }
 
 .modal-btn-continue {

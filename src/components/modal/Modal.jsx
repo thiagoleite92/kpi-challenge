@@ -21,7 +21,7 @@ function Modal ({ setModal }) {
         <form className='modal-form'>
           <label>
             Nome:
-            <input type='text' placeholder='Maria Joaquina' className='modal-input' />
+            <input type='text' autoFocus placeholder='Maria Joaquina' className='modal-input' />
           </label>
           <label>
             Email:
