@@ -10,6 +10,7 @@ function Modal ({ setModal }) {
 
   const handleInputChange = ({ target }) => {
     const { name, value } = target
+
     setUserInfo((oldState) => ({
       ...oldState,
       [name]: value
