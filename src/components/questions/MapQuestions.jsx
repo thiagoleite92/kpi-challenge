@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import FirstQuestion from './FirstQuestion'
+import SecondQuestion from './SecondQuestion'
 
 // eslint-disable-next-line react/prop-types
 function MapQuestions ({ questionPosition }) {
@@ -11,7 +12,10 @@ function MapQuestions ({ questionPosition }) {
       const enumeRateQuestions = questions
       setQuestions(enumeRateQuestions)
     }
-    renderQuestions(<FirstQuestion />)
+    renderQuestions(
+      <FirstQuestion />,
+      <SecondQuestion />
+    )
   }, [])
 
   return (
