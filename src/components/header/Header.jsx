@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import MainContext from '../../context/MainContext'
 import Logo from '../logo/Logo'
 import './header.css'
 
 function Header () {
+  const { userInfo } = useContext(MainContext)
   return (
     <header className='header'>
       <div className='header-logo'>
@@ -10,10 +12,10 @@ function Header () {
       </div>
       <div className='header-user-info'>
         <div>
-          Nome: Thiago José Siqueira Leite
+          Nome: {userInfo.name}
         </div>
         <div>
-          Email: thiago.jsl@hotmail.com
+          Email: {userInfo.email}
         </div>
       </div>
     </header>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Header from '../components/header/Header'
 import Modal from '../components/modal/Modal'
 
-function Forms () {
+function FormsPage () {
   const [modal, setModal] = useState(true)
 
   const renderForms = () => {
@@ -25,4 +25,4 @@ function Forms () {
   )
 }
 
-export default Forms
+export default FormsPage
