@@ -1,0 +1,12 @@
+.questions-container {
+  height: 500px;
+  position: absolute;
+  width: 700px;
+  margin-left: 28%;
+  margin-top: 130px;
+}
+
+.first-question {
+  display: flex;
+  flex-direction: column;
+}
