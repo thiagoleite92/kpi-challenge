@@ -7,7 +7,7 @@ function Modal ({ setModal }) {
   const navigate = useNavigate()
 
   const redirectHomePage = () => {
-    navigate('/')
+    navigate('/home')
   }
 
   return (
