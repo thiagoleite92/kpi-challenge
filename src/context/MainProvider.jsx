@@ -1,20 +1,30 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import MainContext from './MainContext'
+import { validateName, validateEmail } from '../utils/validations'
 
 function MainProvider ({ children }) {
   const [userInfo, setUserInfo] = useState({
     name: '',
     email: ''
   })
-  const [continueButton] = useState(true)
+  const [continueButton, setContinueButton] = useState(true)
 
-  console.log(userInfo)
+  useEffect(() => {
+    const userValidate = () => {
+      if (validateName(userInfo.name) && validateEmail(userInfo.email)) {
+        return setContinueButton(false)
+      }
+      return setContinueButton(true)
+    }
+    userValidate()
+  }, [userInfo])
 
   const context = {
     userInfo,
     setUserInfo,
-    continueButton
+    continueButton,
+    setContinueButton
   }
 
   return (

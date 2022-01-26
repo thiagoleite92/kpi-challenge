@@ -6,7 +6,11 @@ import MainContext from '../../context/MainContext'
 
 function Modal ({ setModal }) {
   const navigate = useNavigate()
-  const { userInfo, setUserInfo, continueButton } = useContext(MainContext)
+  const {
+    userInfo,
+    setUserInfo,
+    continueButton
+  } = useContext(MainContext)
 
   const handleInputChange = ({ target }) => {
     const { name, value } = target
