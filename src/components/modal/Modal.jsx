@@ -30,15 +30,15 @@ function Modal ({ setModal }) {
     <div className='modal-background'>
       <main className='modal-container'>
         <h1 className='modal-title'>
-          Bem vindo(a)!
+          Bem vindo(a),
           <br />
-          Digite seu nome e seu email para poder responder a pesquisa.
+          Que bom ter você aqui!
         </h1>
         <form className='modal-form'>
           <label>
             <input
               type='text'
-              autoFocus placeholder='Seu nome'
+              autoFocus placeholder='Seu Nome'
               maxLength='25'
               minLength='15'
               className='modal-input'
