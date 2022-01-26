@@ -6,20 +6,15 @@ function Forms () {
   const [modal, setModal] = useState(true)
   console.log(setModal)
 
-  const renderForms = () => {
-    return (
-      <Header />
-    )
-  }
-
   return (
-    <>
+    <div className='forms'>
       {
         modal
           ? <Modal />
-          : renderForms()
+          : null
       }
-    </>
+      <Header />
+    </div>
   )
 }
 

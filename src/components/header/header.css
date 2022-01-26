@@ -5,7 +5,8 @@
   height: 80px;
   margin: auto;
   align-items: center;
-  background-color: #0067ac
+  background-color: #0067ac;
+  position: fixed;
 }
 
 .header-logo {
