@@ -4,7 +4,6 @@ import Modal from '../components/modal/Modal'
 
 function Forms () {
   const [modal, setModal] = useState(true)
-  console.log(setModal)
 
   const renderForms = () => {
     return (

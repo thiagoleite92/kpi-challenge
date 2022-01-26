@@ -7,7 +7,6 @@ function Modal ({ setModal }) {
   const navigate = useNavigate()
 
   const redirectHomePage = () => {
-    console.log('oi')
     navigate('/')
   }
 
@@ -28,10 +27,18 @@ function Modal ({ setModal }) {
             Email:
             <input type='email' placeholder='joaquinamaria@email.com' className='modal-input' />
           </label>
-          <button type='button' onClick={() => setModal(false)} className='modal-btn-continue'>
+          <button
+            type='button'
+            onClick={() => setModal(false)}
+            className='modal-btn-continue'
+          >
             Confirmar
           </button>
-          <button type='button' onClick={() => redirectHomePage()} className='modal-btn-exit'>
+          <button
+            type='button'
+            onClick={() => redirectHomePage()}
+            className='modal-btn-exit'
+          >
             Sair
           </button>
         </form>
