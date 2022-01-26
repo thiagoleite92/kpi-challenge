@@ -1,8 +1,16 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './modal.css'
 
 // eslint-disable-next-line react/prop-types
 function Modal ({ setModal }) {
+  const navigate = useNavigate()
+
+  const redirectHomePage = () => {
+    console.log('oi')
+    navigate('/')
+  }
+
   return (
     <div className='modal-background'>
       <main className='modal-container'>
@@ -23,7 +31,7 @@ function Modal ({ setModal }) {
           <button type='button' onClick={() => setModal(false)} className='modal-btn-continue'>
             Confirmar
           </button>
-          <button type='button' className='modal-btn-exit'>
+          <button type='button' onClick={() => redirectHomePage()} className='modal-btn-exit'>
             Sair
           </button>
         </form>
