@@ -10,7 +10,8 @@ function Modal ({ setModal }) {
   const {
     userInfo,
     setUserInfo,
-    continueButton
+    continueButton,
+    setHeaderInfo
   } = useContext(MainContext)
 
   const handleInputChange = ({ target }) => {
@@ -20,6 +21,15 @@ function Modal ({ setModal }) {
       ...oldState,
       [name]: value
     }))
+  }
+
+  const handleContinueButton = () => {
+    setHeaderInfo(userInfo)
+    setModal(false)
+    setUserInfo({
+      name: '',
+      email: ''
+    })
   }
 
   const redirectHomePage = () => {
@@ -61,7 +71,7 @@ function Modal ({ setModal }) {
           <button
             type='button'
             disabled={continueButton}
-            onClick={() => setModal(false)}
+            onClick={() => handleContinueButton()}
             className='modal-btn-continue'
           >
             Confirmar

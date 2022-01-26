@@ -8,6 +8,13 @@ function MainProvider ({ children }) {
     name: '',
     email: ''
   })
+  const [headerInfo, setHeaderInfo] = useState({
+    name: '',
+    email: ''
+  })
+
+  console.log(headerInfo, userInfo)
+
   const [continueButton, setContinueButton] = useState(true)
 
   useEffect(() => {
@@ -24,7 +31,9 @@ function MainProvider ({ children }) {
     userInfo,
     setUserInfo,
     continueButton,
-    setContinueButton
+    setContinueButton,
+    headerInfo,
+    setHeaderInfo
   }
 
   return (

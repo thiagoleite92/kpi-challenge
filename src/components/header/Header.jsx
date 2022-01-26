@@ -4,7 +4,7 @@ import Logo from '../logo/Logo'
 import './header.css'
 
 function Header () {
-  const { userInfo } = useContext(MainContext)
+  const { headerInfo } = useContext(MainContext)
   return (
     <header className='header'>
       <div className='header-logo'>
@@ -12,10 +12,10 @@ function Header () {
       </div>
       <div className='header-user-info'>
         <div>
-          Nome: {userInfo.name}
+          Nome: {headerInfo.name}
         </div>
         <div>
-          Email: {userInfo.email}
+          Email: {headerInfo.email}
         </div>
       </div>
     </header>
