@@ -10,10 +10,10 @@ function Header () {
       </div>
       <div className='header-user-info'>
         <div>
-          Nome
+          Nome: Thiago José Siqueira Leite
         </div>
         <div>
-          Email
+          Email: thiago.jsl@hotmail.com
         </div>
       </div>
     </header>
