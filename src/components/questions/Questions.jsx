@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import MainContext from '../../context/MainContext'
+import SendAnswersButton from '../buttons/SendAnswersButton'
 import MapQuestions from './MapQuestions'
 import './questions.css'
 
@@ -36,12 +37,7 @@ function Questions () {
         >
           Anterior
         </button>
-        <button
-          disabled={sendButton}
-          className='btn-send-answers'
-        >
-          Salvar e enviar
-        </button>
+        <SendAnswersButton sendButton={sendButton} />
         <button
           disabled={questionPosition === 1}
           onClick={() => setQuestPosition(questionPosition + 1)}
