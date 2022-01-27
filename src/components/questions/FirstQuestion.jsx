@@ -42,7 +42,7 @@ function FirstQuestion () {
           <input
             type='radio'
             name='firstQuestion'
-            value='10-1'
+            value='10-14'
             onChange={handleOptions}
             checked={firstQuestion === '10-14'}
           />
