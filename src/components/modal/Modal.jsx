@@ -11,7 +11,8 @@ function Modal ({ setModal }) {
     userInfo,
     setUserInfo,
     continueButton,
-    setHeaderInfo
+    setHeaderInfo,
+    setAnswers
   } = useContext(MainContext)
 
   const handleInputChange = ({ target }) => {
@@ -29,6 +30,10 @@ function Modal ({ setModal }) {
     setUserInfo({
       name: '',
       email: ''
+    })
+    setAnswers({
+      firstQuestion: '',
+      secondQuestion: ''
     })
   }
 
