@@ -6,7 +6,7 @@ import './questions.css'
 function Questions () {
   const [questionPosition, setQuestPosition] = useState(0)
   const [sendButton, setSendButton] = useState(true)
-  const { answers } = useContext(MainContext)
+  const { answers, setAnswers } = useContext(MainContext)
 
   useEffect(() => {
     const handleSendButton = () => {
@@ -21,6 +21,13 @@ function Questions () {
   return (
     <main className='questions-container'>
       <MapQuestions questionPosition={questionPosition} />
+      <button
+        className='btn-reset'
+        style={{ marginTop: '10px' }}
+        onClick={() => setAnswers({ firstQuestion: '', secondQuestion: '' })}
+      >
+        Resetar
+      </button>
       <div className='btn-question-container'>
         <button
           className='btn-prev-question'
