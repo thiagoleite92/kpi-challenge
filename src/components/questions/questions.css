@@ -9,17 +9,41 @@
 .first-question {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-around;  
   height: 100%;
   border: solid 1px #0067ac;
-  padding: 10px;
+  padding: 20px
+}
+
+.first-question-label {
+  display: flex;
+  justify-content: space-around;
+  width: 150px;
+  align-items: center;
+  text-align: left;
 }
 
 .second-question {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
-  height: 100%;
+  height: 50%;
+  align-items: center;
   border: solid 1px #0067ac;
-  padding: 10px;
+  padding: 20px;
+}
+
+.second-question-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 50px;
+}
+
+.second-input-option {
+  display: flex;
+  flex-direction: column;
+  height: 20px;
+  width: 30px;
+  justify-content: space-around;
 }

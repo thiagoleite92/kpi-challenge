@@ -21,6 +21,13 @@ function MainProvider ({ children }) {
 
   console.log(answers)
 
+  const handleOptions = ({ target: { name, value } }) => {
+    setAnswers((oldState) => ({
+      ...oldState,
+      [name]: value
+    }))
+  }
+
   const [continueButton, setContinueButton] = useState(true)
 
   useEffect(() => {
@@ -41,7 +48,8 @@ function MainProvider ({ children }) {
     headerInfo,
     setHeaderInfo,
     answers,
-    setAnswers
+    setAnswers,
+    handleOptions
   }
 
   return (
