@@ -53,7 +53,8 @@
 
 .modal-btn-continue:disabled {
   background-color: #c8c3c3;
-  color:#5e6366
+  color:#5e6366;
+  cursor: not-allowed;
 }
 
 .modal-btn-exit {

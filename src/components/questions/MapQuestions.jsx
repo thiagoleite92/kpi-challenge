@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import PropTypes from 'prop-types'
 import FirstQuestion from './FirstQuestion'
 import SecondQuestion from './SecondQuestion'
 
-// eslint-disable-next-line react/prop-types
 function MapQuestions ({ questionPosition }) {
   console.log(questionPosition)
   const [questions, setQuestions] = useState([])
@@ -26,5 +26,9 @@ function MapQuestions ({ questionPosition }) {
     </>
   )
 }
+
+MapQuestions.propTypes = {
+  questionPosition: PropTypes.number
+}.isRequired
 
 export default MapQuestions
