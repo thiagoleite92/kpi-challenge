@@ -4,7 +4,6 @@ import FirstQuestion from './FirstQuestion'
 import SecondQuestion from './SecondQuestion'
 
 function MapQuestions ({ questionPosition }) {
-  console.log(questionPosition)
   const [questions, setQuestions] = useState([])
 
   useEffect(() => {
