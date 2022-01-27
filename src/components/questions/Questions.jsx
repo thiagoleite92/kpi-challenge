@@ -1,10 +1,22 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
+import MainContext from '../../context/MainContext'
 import MapQuestions from './MapQuestions'
 import './questions.css'
 
 function Questions () {
   const [questionPosition, setQuestPosition] = useState(0)
   const [sendButton, setSendButton] = useState(true)
+  const { answers } = useContext(MainContext)
+
+  useEffect(() => {
+    const handleSendButton = () => {
+      if (answers.firstQuestion !== '' && answers.secondQuestion !== '') {
+        return setSendButton(false)
+      }
+      return setSendButton(true)
+    }
+    handleSendButton()
+  }, [answers.firstQuestion, answers.secondQuestion])
 
   return (
     <main className='questions-container'>
@@ -18,6 +30,7 @@ function Questions () {
           Anterior
         </button>
         <button
+          disabled={sendButton}
           className='btn-send-answers'
         >
           Salvar e enviar
