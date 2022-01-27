@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import MainContext from '../../context/MainContext'
 
 function SecondQuestion () {
-  const { handleOptions } = useContext(MainContext)
+  const { handleOptions, answers: { secondQuestion } } = useContext(MainContext)
 
   const renderOptions = (value) => {
     return (
@@ -15,6 +15,7 @@ function SecondQuestion () {
           value={value}
           onChange={handleOptions}
           className='second-input-option'
+          checked={secondQuestion === value.toString()}
         />
         <br />
         {value}
