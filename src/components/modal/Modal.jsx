@@ -1,12 +1,11 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
-import { useNavigate } from 'react-router-dom'
 import './modal.css'
 import MainContext from '../../context/MainContext'
 import Message from './Message'
+import ExitButton from '../buttons/ExitButton'
 
 function Modal ({ setModal }) {
-  const navigate = useNavigate()
   const {
     userInfo,
     setUserInfo,
@@ -35,10 +34,6 @@ function Modal ({ setModal }) {
       firstQuestion: '',
       secondQuestion: ''
     })
-  }
-
-  const redirectHomePage = () => {
-    navigate('/home')
   }
 
   return (
@@ -86,13 +81,7 @@ function Modal ({ setModal }) {
               ? <Message />
               : null
           }
-          <button
-            type='button'
-            onClick={() => redirectHomePage()}
-            className='modal-btn-exit'
-          >
-            Sair
-          </button>
+          <ExitButton />
         </form>
       </main>
     </div>

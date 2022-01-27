@@ -19,7 +19,7 @@ function MainProvider ({ children }) {
     secondQuestion: ''
   })
 
-  console.log(answers)
+  console.log(answers, userInfo, headerInfo)
 
   const handleOptions = ({ target: { name, value } }) => {
     setAnswers((oldState) => ({
