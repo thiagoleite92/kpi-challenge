@@ -1,17 +1,14 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import MainContext from '../../context/MainContext'
-import db from '../../database/Api'
-import { collection, addDoc } from 'firebase/firestore'
+import { insertFeedback } from '../../database/Api'
 
 function SendAnswersButton ({ sendButton }) {
-  const { headerInfo, answers } = useContext(MainContext)
-  const answersCollectionRef = collection(db, 'answers')
+  const { answers } = useContext(MainContext)
 
   const saveAndSend = async (e) => {
     e.preventDefault()
-    console.log(answers, headerInfo)
-    await addDoc(answersCollectionRef, answers)
+    await insertFeedback(answers)
   }
 
   return (
