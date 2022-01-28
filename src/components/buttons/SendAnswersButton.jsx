@@ -1,14 +1,15 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import MainContext from '../../context/MainContext'
-import { insertFeedback } from '../../database/Api'
+import { feedbackFirstQuestion, feedbackSecondQuestion } from '../../database/Api'
 
 function SendAnswersButton ({ sendButton }) {
   const { answers } = useContext(MainContext)
 
   const saveAndSend = async (e) => {
     e.preventDefault()
-    await insertFeedback(answers)
+    await feedbackFirstQuestion(answers)
+    await feedbackSecondQuestion(answers)
   }
 
   return (

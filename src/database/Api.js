@@ -6,20 +6,27 @@ import { collection, addDoc, getDocs } from 'firebase/firestore'
 const app = initializeApp(firebaseConfig)
 
 const db = getFirestore(app)
-const collectionName = 'feedbacks'
+const first = 'firstQuestion'
+const second = 'secondQuestion'
 
-const collectionRef = collection(db, collectionName)
+const firstRef = collection(db, first)
+const secondRef = collection(db, second)
 
-const insertFeedback = async (data) => {
-  await addDoc(collectionRef, data)
+const feedbackFirstQuestion = async ({ firstQuestion }) => {
+  await addDoc(firstRef, { firstQuestion })
+}
+
+const feedbackSecondQuestion = async ({ secondQuestion }) => {
+  await addDoc(secondRef, { secondQuestion })
 }
 
 const getFeedbacks = async () => {
-  const data = await getDocs(collectionRef)
+  const data = await getDocs(firstRef)
   return data
 }
 
 export {
-  insertFeedback,
+  feedbackFirstQuestion,
+  feedbackSecondQuestion,
   getFeedbacks
 }

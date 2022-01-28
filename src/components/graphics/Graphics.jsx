@@ -1,16 +1,23 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { getFeedbacks } from '../../database/Api'
+import ResponsiveBar from './ResponsiveBar'
 
 function Graphics () {
+  const [data, setData] = useState([])
   useEffect(() => {
     const fetchFeedbacks = async () => {
-      const data = await getFeedbacks()
-      console.log(data.docs.map((doc) => ({ ...doc.data() })))
+      const response = await getFeedbacks()
+      console.log(response.docs.map((doc) => ({ ...doc.data() })))
+      setData(response.docs.map((doc) => ({ ...doc.data() })))
     }
     fetchFeedbacks()
   }, [])
+
   return (
-    <div>Resuls page</div>
+    <div style={{ height: '500px' }}>
+      Quantas pessoas tem sua equipe?
+      <ResponsiveBar data={data} />
+    </div>
   )
 }
 
