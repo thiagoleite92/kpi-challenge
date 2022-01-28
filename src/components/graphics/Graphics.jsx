@@ -5,7 +5,7 @@ function Graphics () {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       const data = await getFeedbacks()
-      console.log(data)
+      console.log(data.docs.map((doc) => ({ ...doc.data() })))
     }
     fetchFeedbacks()
   }, [])
