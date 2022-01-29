@@ -3,33 +3,10 @@ import React from 'react'
 
 import { ResponsiveBar } from '@nivo/bar'
 
-const teste = [
-  {
-    value: '1-3',
-    Quantidade: 6
-  },
-  {
-    value: '4-6',
-    Quantidade: 10
-  },
-  {
-    value: '7-9',
-    Quantidade: 8
-  },
-  {
-    value: '10-14',
-    Quantidade: 5
-  },
-  {
-    value: '15 ou mais',
-    Quantidade: 3
-  }
-]
-
 // eslint-disable-next-line react/prop-types
 const MyResponsiveBar = ({ data /* see data tab */ }) => (
   <ResponsiveBar
-    data={teste}
+    data={data}
     keys={[
       'Quantidade'
     ]}

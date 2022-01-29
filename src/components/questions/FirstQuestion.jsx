@@ -12,9 +12,9 @@ function FirstQuestion () {
           <input
             type='radio'
             name='firstQuestion'
-            value='1-3'
+            value='a'
             onChange={handleOptions}
-            checked={firstQuestion === '1-3'}
+            checked={firstQuestion === 'a'}
           />
           Entre 1 e 3
         </label>
@@ -22,9 +22,9 @@ function FirstQuestion () {
           <input
             type='radio'
             name='firstQuestion'
-            value='4-6'
+            value='b'
             onChange={handleOptions}
-            checked={firstQuestion === '4-6'}
+            checked={firstQuestion === 'b'}
           />
           Entre 4 e 6
         </label>
@@ -32,9 +32,9 @@ function FirstQuestion () {
           <input
             type='radio'
             name='firstQuestion'
-            value='7-9'
+            value='c'
             onChange={handleOptions}
-            checked={firstQuestion === '7-9'}
+            checked={firstQuestion === 'c'}
           />
           Entre 7 e 9
         </label>
@@ -42,9 +42,9 @@ function FirstQuestion () {
           <input
             type='radio'
             name='firstQuestion'
-            value='10-14'
+            value='d'
             onChange={handleOptions}
-            checked={firstQuestion === '10-14'}
+            checked={firstQuestion === 'd'}
           />
           Entre 10 e 14
         </label>
@@ -52,9 +52,9 @@ function FirstQuestion () {
           <input
             type='radio'
             name='firstQuestion'
-            value='15 ou mais'
+            value='e'
             onChange={handleOptions}
-            checked={firstQuestion === '15 ou mais'}
+            checked={firstQuestion === 'e'}
           />
           Mais de 15
         </label>
