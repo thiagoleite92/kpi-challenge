@@ -1,16 +1,18 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import MainContext from '../../context/MainContext'
-import { updateFirstQuestion } from '../../database/Api'
+import { updateFirstQuestion, updateSecondQuestion } from '../../database/Api'
 
 function SendAnswersButton ({ sendButton }) {
   const { answers } = useContext(MainContext)
 
   const saveAndSend = async (e) => {
     e.preventDefault()
-    const { firstQuestion } = answers
-    console.log(firstQuestion)
+    const { firstQuestion, secondQuestion } = answers
+    console.log(secondQuestion, typeof secondQuestion)
     await updateFirstQuestion(firstQuestion)
+    console.log('oi')
+    await updateSecondQuestion(secondQuestion)
   }
 
   return (

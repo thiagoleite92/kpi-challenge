@@ -1,24 +1,32 @@
 import React, { useEffect, useState } from 'react'
-import { getFeedbacks } from '../../database/Api'
+import { getFirstCollection /* getSecondCollection */ } from '../../database/Api'
 import { formatFirstCollection } from '../../utils/formatdata'
-import ResponsiveBar from './ResponsiveBar'
+import FirstQuestionResult from './FirstQuestionResult'
+import SecondQuestionResult from './SecondQuestionResult'
 
 function Graphics () {
-  const [data, setData] = useState([])
+  const [firstCollectionData, setFirstCollectionData] = useState([])
+  const [secondCollectionData, setsecondCollectionData] = useState([])
+
   useEffect(() => {
     const fetchFeedbacks = async () => {
-      const response = await getFeedbacks()
-      const responseParse = response.docs.map((doc) => ({ ...doc.data() }))
-      const formatedResponse = formatFirstCollection(responseParse)
-      setData(formatedResponse)
+      const responseFirstCollection = await getFirstCollection()
+      // const responseSecondCollection = await getSecondCollection()
+
+      const parseFirstCollection = responseFirstCollection.docs.map((doc) => ({ ...doc.data() }))
+      // const parseSecondCollection = responseSecondCollection.docs.map((doc) => ({ ...doc.data() }))
+
+      const formatedFirstCollection = formatFirstCollection(parseFirstCollection)
+      setFirstCollectionData(formatedFirstCollection)
+      setsecondCollectionData(formatedFirstCollection)
     }
     fetchFeedbacks()
   }, [])
 
   return (
-    <div style={{ height: '500px' }}>
-      Quantas pessoas tem sua equipe?
-      <ResponsiveBar data={data} />
+    <div style={{ height: '500px', display: 'flex' }}>
+      <FirstQuestionResult data={firstCollectionData} />
+      <SecondQuestionResult data={secondCollectionData} />
     </div>
   )
 }
