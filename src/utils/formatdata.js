@@ -34,6 +34,31 @@ function formatFirstCollection (firstCollection) {
   return formatedData
 }
 
+function sortSecondQuestion (data) {
+  const sortedData = data.sort((a, b) => {
+    if (Number(a.value) < Number(b.value)) return -1
+    if (Number(a.value) > Number(b.value)) return 1
+    return 0
+  })
+
+  return sortedData
+}
+
+function correctQuantityKey (data) {
+  const correctKey = data.map(({ value, quantity }) => ({
+    value: value, Quantidade: quantity
+  }))
+
+  return correctKey
+}
+
+function formatSecondCollection (secondCollection) {
+  const formatedData = correctQuantityKey(sortSecondQuestion(secondCollection))
+
+  return formatedData
+}
+
 export {
-  formatFirstCollection
+  formatFirstCollection,
+  formatSecondCollection
 }

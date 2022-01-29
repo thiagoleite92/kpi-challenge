@@ -36,12 +36,8 @@ const updateFirstQuestion = async (key) => {
 const updateSecondQuestion = async (key) => {
   const response = await getSecondCollection()
   const documents = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-  console.log(documents)
-  console.log(key)
 
   const { id, quantity } = documents.find(({ value }) => value === key)
-
-  console.log(id)
 
   const testeDoc = doc(db, second, id)
   const newQuantity = { quantity: quantity + 1 }
