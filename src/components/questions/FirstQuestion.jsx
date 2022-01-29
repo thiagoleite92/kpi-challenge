@@ -52,9 +52,9 @@ function FirstQuestion () {
           <input
             type='radio'
             name='firstQuestion'
-            value='15'
+            value='15 ou mais'
             onChange={handleOptions}
-            checked={firstQuestion === '15'}
+            checked={firstQuestion === '15 ou mais'}
           />
           Mais de 15
         </label>

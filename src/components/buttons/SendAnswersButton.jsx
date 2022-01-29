@@ -1,15 +1,16 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import MainContext from '../../context/MainContext'
-import { feedbackFirstQuestion, feedbackSecondQuestion } from '../../database/Api'
+import { updateFirstQuestion } from '../../database/Api'
 
 function SendAnswersButton ({ sendButton }) {
   const { answers } = useContext(MainContext)
 
   const saveAndSend = async (e) => {
     e.preventDefault()
-    await feedbackFirstQuestion(answers)
-    await feedbackSecondQuestion(answers)
+    const { firstQuestion } = answers
+    console.log(firstQuestion)
+    await updateFirstQuestion(firstQuestion)
   }
 
   return (
@@ -19,7 +20,7 @@ function SendAnswersButton ({ sendButton }) {
       disabled={sendButton}
       className='btn-send-answers'
     >
-      Salvar e enviar
+      Salvar e Enviar
     </button>
   )
 }

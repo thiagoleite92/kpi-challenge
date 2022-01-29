@@ -1,59 +1,31 @@
 /* eslint-disable react/jsx-no-bind */
 import React from 'react'
-// install (please make sure versions match peerDependencies)
-// yarn add @nivo/core @nivo/pie
+
 import { ResponsiveBar } from '@nivo/bar'
 
 const teste = [
   {
-    values: '1-3',
-    Quantidade: 15,
-    QuantidadeColor: 'hsl(59, 70%, 50%)'
+    value: '1-3',
+    Quantidade: 6
   },
   {
-    values: '4-6',
-    Quantidade: 10,
-    QuantidadeColor: 'hsl(59, 70%, 50%)'
+    value: '4-6',
+    Quantidade: 10
   },
   {
-    values: '7-9',
-    Quantidade: 8,
-    QuantidadeColor: 'hsl(59, 70%, 50%)'
+    value: '7-9',
+    Quantidade: 8
   },
   {
-    values: '10-14',
-    Quantidade: 5,
-    QuantidadeColor: 'hsl(59, 70%, 50%)'
+    value: '10-14',
+    Quantidade: 5
   },
   {
-    values: '15 ou mais',
-    Quantidade: 3,
-    QuantidadeColor: 'hsl(59, 70%, 50%)'
+    value: '15 ou mais',
+    Quantidade: 3
   }
 ]
 
-// const teste2 = [
-//   {
-//     country: 'AD',
-//     'hot dog': 171,
-//     'hot dogColor': 'hsl(59, 70%, 50%)',
-//     burger: 176,
-//     burgerColor: 'hsl(8, 70%, 50%)',
-//     sandwich: 70,
-//     sandwichColor: 'hsl(36, 70%, 50%)',
-//     kebab: 54,
-//     kebabColor: 'hsl(41, 70%, 50%)',
-//     fries: 196,
-//     friesColor: 'hsl(73, 70%, 50%)',
-//     donut: 4,
-//     donutColor: 'hsl(151, 70%, 50%)'
-//   }
-// ]
-// make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
 // eslint-disable-next-line react/prop-types
 const MyResponsiveBar = ({ data /* see data tab */ }) => (
   <ResponsiveBar
@@ -61,12 +33,12 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
     keys={[
       'Quantidade'
     ]}
-    indexBy='values'
+    indexBy='value'
     margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
     padding={0.3}
     valueScale={{ type: 'linear' }}
     indexScale={{ type: 'band', round: true }}
-    colors={{ scheme: 'nivo' }}
+    colors={{ scheme: 'dark2' }}
     defs={[
       {
         id: 'dots',
