@@ -2,19 +2,13 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import FirstQuestion from './FirstQuestion'
 import SecondQuestion from './SecondQuestion'
+import enumerateComponents from '../../utils/componentsPosition'
 
 function MapQuestions ({ questionPosition }) {
   const [questions, setQuestions] = useState([])
 
   useEffect(() => {
-    const renderQuestions = (...questions) => {
-      const enumeRateQuestions = questions
-      setQuestions(enumeRateQuestions)
-    }
-    renderQuestions(
-      <FirstQuestion />,
-      <SecondQuestion />
-    )
+    enumerateComponents(setQuestions, <FirstQuestion />, <SecondQuestion />)
   }, [])
 
   return (
