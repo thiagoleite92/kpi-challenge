@@ -1,30 +1,39 @@
 import React, { useEffect, useState } from 'react'
-import { getFirstCollection } from '../../database/Api'
-import { formatFirstCollection } from '../../utils/formatdata'
 import FirstQuestionResult from './FirstQuestionResult'
 import SecondQuestionResult from './SecondQuestionResult'
 
 function Graphics () {
-  const [firstCollectionData, setFirstCollectionData] = useState([])
+  const [graphics, setGraphics] = useState([])
+  const [graphicPosition, setGraphicPosition] = useState(0)
 
   useEffect(() => {
-    const fetchFeedbacks = async () => {
-      const responseFirstCollection = await getFirstCollection()
-
-      const parseFirstCollection = responseFirstCollection.docs.map((doc) => ({ ...doc.data() }))
-
-      const formatedFirstCollection = formatFirstCollection(parseFirstCollection)
-
-      setFirstCollectionData(formatedFirstCollection)
+    const renderGraphics = (...graphics) => {
+      const enumerateGraphics = graphics
+      setGraphics(enumerateGraphics)
     }
-    fetchFeedbacks()
-  }, [])
+    renderGraphics(<FirstQuestionResult />, <SecondQuestionResult />)
+  })
 
   return (
-    <div style={{ height: '500px', display: 'flex' }}>
-      <FirstQuestionResult data={firstCollectionData} />
-      <SecondQuestionResult />
-    </div>
+    <main className='graphic-main-container'>
+      {
+        graphics[graphicPosition]
+      }
+      <button
+        className='btn-prev-question'
+        disabled={graphicPosition === 0}
+        onClick={() => setGraphicPosition(graphicPosition - 1)}
+      >
+        Anterior
+      </button>
+      <button
+        disabled={graphicPosition === 1}
+        onClick={() => setGraphicPosition(graphicPosition + 1)}
+        className='btn-next-question'
+      >
+        Proxima
+      </button>
+    </main>
   )
 }
 

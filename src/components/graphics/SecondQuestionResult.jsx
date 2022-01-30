@@ -5,8 +5,7 @@ import { ResponsiveBar } from '@nivo/bar'
 import { getSecondCollection } from '../../database/Api'
 import { formatSecondCollection } from '../../utils/formatdata'
 
-// eslint-disable-next-line react/prop-types
-const SecondQuestionResult = ({ data /* see data tab */ }) => {
+const SecondQuestionResult = () => {
   const [feedBacks, setFeedBacks] = useState([])
 
   useEffect(() => {
@@ -20,6 +19,7 @@ const SecondQuestionResult = ({ data /* see data tab */ }) => {
     }
     fetchFeedbacks()
   }, [])
+
   return (
     <main style={{ height: '500px', marginTop: '50px', width: '50%' }}>
       <div>Seu nível de satisfação?</div>
