@@ -7,6 +7,7 @@ import { formatSecondCollection } from '../../utils/formatdata'
 
 const SecondQuestionResult = () => {
   const [feedBacks, setFeedBacks] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const fetchFeedbacks = async () => {
@@ -16,9 +17,14 @@ const SecondQuestionResult = () => {
       const formatedSecondCollection = formatSecondCollection(parseSecondCollection)
 
       setFeedBacks(formatedSecondCollection)
+      setLoading(false)
     }
     fetchFeedbacks()
   }, [])
+
+  if (loading) {
+    return <div>Carregando gráfico</div>
+  }
 
   return (
     <main style={{ height: '500px' }}>

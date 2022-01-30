@@ -75,8 +75,8 @@ function Modal ({ setModal }) {
             onClick={() => handleContinueButton()}
             className='modal-btn-continue'
           >
-            <CheckIcon />
             Confirmar
+            <CheckIcon />
           </button>
           {
             continueButton
