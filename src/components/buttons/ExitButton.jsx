@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import MainContext from '../../context/MainContext'
+import LogoutIcon from '@mui/icons-material/Logout'
 import { useNavigate } from 'react-router-dom'
 
 function ExitButton () {
@@ -34,6 +35,7 @@ function ExitButton () {
       className='modal-btn-exit'
     >
       Sair
+      <LogoutIcon />
     </button>
   )
 }
