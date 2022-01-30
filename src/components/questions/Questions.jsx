@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from 'react'
 import MainContext from '../../context/MainContext'
 import SendAnswersButton from '../buttons/SendAnswersButton'
 import MapQuestions from './MapQuestions'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
+import RestartAltIcon from '@mui/icons-material/RestartAlt'
 import './questions.css'
 
 function Questions () {
@@ -27,7 +30,8 @@ function Questions () {
         style={{ marginTop: '10px' }}
         onClick={() => setAnswers({ firstQuestion: '', secondQuestion: '' })}
       >
-        Resetar
+        <RestartAltIcon />
+        Recomeçar
       </button>
       <div className='btn-question-container'>
         <button
@@ -35,6 +39,7 @@ function Questions () {
           disabled={questionPosition === 0}
           onClick={() => setQuestPosition(questionPosition - 1)}
         >
+          <ArrowBackIosIcon />
           Anterior
         </button>
         <SendAnswersButton sendButton={sendButton} />
@@ -43,7 +48,8 @@ function Questions () {
           onClick={() => setQuestPosition(questionPosition + 1)}
           className='btn-next-question'
         >
-          Proxima
+          Próxima
+          <ArrowForwardIosIcon />
         </button>
       </div>
     </main>

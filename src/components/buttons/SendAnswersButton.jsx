@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import MainContext from '../../context/MainContext'
+import SendIcon from '@mui/icons-material/Send'
 import { updateFirstQuestion, updateSecondQuestion } from '../../database/Api'
 
 function SendAnswersButton ({ sendButton }) {
@@ -20,7 +21,8 @@ function SendAnswersButton ({ sendButton }) {
       disabled={sendButton}
       className='btn-send-answers'
     >
-      Salvar e Enviar
+      Enviar
+      <SendIcon />
     </button>
   )
 }

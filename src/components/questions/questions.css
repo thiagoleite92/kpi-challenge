@@ -56,13 +56,16 @@
 }
 
 .btn-next-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   color: #f8f8f8;
   padding: 10px 16px;
   font-size: 16px;
   font-weight: normal;
   border: none;
   border-radius: 5px;
-  width: 200px;
+  width: 100px;
   margin: 25px auto;
   background-color: #0067ac;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -76,15 +79,18 @@
 }
 
 .btn-prev-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   color: #f8f8f8;
   padding: 10px 16px;
   font-size: 16px;
   font-weight: normal;
   border: none;
   border-radius: 5px;
-  width: 200px;
+  width: 100px;
   margin: 25px auto;
-  background-color: #ac0600;
+  background-color: #0067ac;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
 }
@@ -102,6 +108,9 @@
 }
 
 .btn-send-answers {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
   color: #f8f8f8;
   padding: 10px 16px;
   font-size: 16px;
@@ -116,15 +125,16 @@
 }
 
 .btn-reset {
-  color: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #000000;
   padding: 10px 16px;
-  font-size: 16px;
-  font-weight: normal;
   border: none;
   border-radius: 5px;
   width: 100px;
   margin: 25px auto;
-  background-color: #0f8d0f;
+  background-color: #eeff41;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
 }
