@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import enumerateComponents from '../../utils/componentsPosition'
 import FirstQuestionResult from './FirstQuestionResult'
 import SecondQuestionResult from './SecondQuestionResult'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
 import './graphics.css'
 
 function Graphics () {
@@ -24,6 +26,7 @@ function Graphics () {
           disabled={graphicPosition === 0}
           onClick={() => setGraphicPosition(graphicPosition - 1)}
         >
+          <ArrowBackIosIcon />
           Anterior
         </button>
         <button
@@ -32,7 +35,8 @@ function Graphics () {
           onClick={() => setGraphicPosition(graphicPosition + 1)}
           className='btn-next-graphic'
         >
-          Proxima
+          Próximo
+          <ArrowForwardIosIcon />
         </button>
       </div>
     </main>
