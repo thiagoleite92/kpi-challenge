@@ -2,25 +2,25 @@ import React, { useEffect, useState } from 'react'
 import enumerateComponents from '../../utils/componentsPosition'
 import FirstQuestionResult from './FirstQuestionResult'
 import SecondQuestionResult from './SecondQuestionResult'
+import './graphics.css'
 
 function Graphics () {
   const [graphics, setGraphics] = useState([])
   const [graphicPosition, setGraphicPosition] = useState(0)
-  console.log(graphicPosition)
 
   useEffect(() => {
     enumerateComponents(setGraphics, <FirstQuestionResult />, <SecondQuestionResult />)
   }, [])
 
   return (
-    <main className='graphic-main-container'>
+    <main className='graphic-container'>
       {
         graphics[graphicPosition]
       }
-      <div className='btn-graphics-container'>
+      <div className='btn-graphic-container'>
         <button
           type='button'
-          className='btn-prev-question'
+          className='btn-prev-graphic'
           disabled={graphicPosition === 0}
           onClick={() => setGraphicPosition(graphicPosition - 1)}
         >
@@ -30,7 +30,7 @@ function Graphics () {
           type='button'
           disabled={graphicPosition === 1}
           onClick={() => setGraphicPosition(graphicPosition + 1)}
-          className='btn-next-question'
+          className='btn-next-graphic'
         >
           Proxima
         </button>

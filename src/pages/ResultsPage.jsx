@@ -3,9 +3,9 @@ import Graphics from '../components/graphics/Graphics'
 
 function ResultsPage () {
   return (
-    <div>
+    <main className='graphic-main-container'>
       <Graphics />
-    </div>
+    </main>
   )
 }
 

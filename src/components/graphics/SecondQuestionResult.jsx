@@ -21,7 +21,7 @@ const SecondQuestionResult = () => {
   }, [])
 
   return (
-    <main style={{ height: '500px', marginTop: '50px', width: '50%' }}>
+    <main style={{ height: '500px' }}>
       <div>Seu nível de satisfação?</div>
       <ResponsiveBar
         data={feedBacks}
@@ -33,7 +33,7 @@ const SecondQuestionResult = () => {
         padding={0.3}
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
-        colors={{ scheme: 'dark2' }}
+        colors={{ scheme: 'nivo' }}
         defs={[
           {
             id: 'dots',

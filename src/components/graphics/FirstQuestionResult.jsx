@@ -20,7 +20,7 @@ const FirstQuestionResult = () => {
   }, [])
 
   return (
-    <main style={{ height: '500px', marginTop: '50px', width: '50%' }}>
+    <div style={{ height: '500px' }}>
       <div>Quantas pessoas tem sua equipe?</div>
       <ResponsiveBar
         data={feedBacks}
@@ -127,7 +127,7 @@ const FirstQuestionResult = () => {
         ariaLabel='Nivo bar chart demo'
         barAriaLabel={function (e) { return e.id + ': ' + e.formattedValue + ' in country: ' + e.indexValue }}
       />
-    </main>
+    </div>
   )
 }
 export default FirstQuestionResult
