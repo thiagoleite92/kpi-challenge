@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import './modal.css'
 import MainContext from '../../context/MainContext'
+import CheckIcon from '@mui/icons-material/Check'
 import Message from './Message'
 import ExitButton from '../buttons/ExitButton'
 
@@ -74,6 +75,7 @@ function Modal ({ setModal }) {
             onClick={() => handleContinueButton()}
             className='modal-btn-continue'
           >
+            <CheckIcon />
             Confirmar
           </button>
           {
