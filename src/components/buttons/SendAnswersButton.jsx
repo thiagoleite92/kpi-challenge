@@ -9,9 +9,7 @@ function SendAnswersButton ({ sendButton }) {
   const saveAndSend = async (e) => {
     e.preventDefault()
     const { firstQuestion, secondQuestion } = answers
-    console.log(secondQuestion, typeof secondQuestion)
     await updateFirstQuestion(firstQuestion)
-    console.log('oi')
     await updateSecondQuestion(secondQuestion)
   }
 
