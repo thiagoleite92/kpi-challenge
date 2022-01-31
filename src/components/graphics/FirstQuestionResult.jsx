@@ -20,7 +20,7 @@ const FirstQuestionResult = () => {
       setFeedBacks(formatedSecondCollection)
       setTimeout(() => {
         setIsLoading(false)
-      }, 1500)
+      }, 1000)
     }
     fetchFeedbacks()
   }, [setIsLoading])

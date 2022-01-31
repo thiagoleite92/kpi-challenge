@@ -5,6 +5,8 @@
 }
 
 .graphic-container {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(255, 248, 248);
   width: 50%;
   height: 500px;

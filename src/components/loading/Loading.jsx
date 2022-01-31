@@ -1,9 +1,15 @@
 import React from 'react'
 import ReactLoading from 'react-loading'
+import './loading.css'
 
 function Loading () {
   return (
-    <ReactLoading color='#000000' className='graphic-loading' />
+    <div className='graphic-loading'>
+      <ReactLoading
+        color='#000000'
+        type='spokes'
+      />
+    </div>
   )
 }
 
