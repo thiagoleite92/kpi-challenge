@@ -1,13 +1,14 @@
 /* eslint-disable react/jsx-no-bind */
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ResponsiveBar } from '@nivo/bar'
 import { getFirstCollection } from '../../database/Api'
 import { formatFirstCollection } from '../../utils/formatdata'
+import MainContext from '../../context/MainContext'
 import Loading from '../loading/Loading'
 
 const FirstQuestionResult = () => {
   const [feedBacks, setFeedBacks] = useState([])
-  const [loading, setLoading] = useState(true)
+  const { isLoading, setIsLoading } = useContext(MainContext)
 
   useEffect(() => {
     const fetchFeedbacks = async () => {
@@ -18,15 +19,13 @@ const FirstQuestionResult = () => {
 
       setFeedBacks(formatedSecondCollection)
       setTimeout(() => {
-        setLoading(false)
-      }, 2000)
+        setIsLoading(false)
+      }, 1500)
     }
     fetchFeedbacks()
-  }, [])
+  }, [setIsLoading])
 
-  if (loading) {
-    return (<Loading />)
-  }
+  if (isLoading) return (<Loading />)
 
   return (
     <div style={{ height: '400px' }}>

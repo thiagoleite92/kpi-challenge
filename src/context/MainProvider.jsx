@@ -26,6 +26,8 @@ function MainProvider ({ children }) {
     }))
   }
 
+  const [isLoading, setIsLoading] = useState(true)
+
   const [continueButton, setContinueButton] = useState(true)
 
   useEffect(() => {
@@ -47,7 +49,9 @@ function MainProvider ({ children }) {
     setHeaderInfo,
     answers,
     setAnswers,
-    handleOptions
+    handleOptions,
+    isLoading,
+    setIsLoading
   }
 
   return (

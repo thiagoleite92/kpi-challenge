@@ -3,7 +3,7 @@ import ReactLoading from 'react-loading'
 
 function Loading () {
   return (
-    <ReactLoading color='#000000' />
+    <ReactLoading color='#000000' className='graphic-loading' />
   )
 }
 
