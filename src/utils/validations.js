@@ -1,5 +1,5 @@
 const validateName = (name) => {
-  const NAME_MIN_LENGTH = 12
+  const NAME_MIN_LENGTH = 4
   const NAME_MAX_LENGTH = 25
   if (name.length < NAME_MIN_LENGTH && name.length < NAME_MAX_LENGTH) {
     return false

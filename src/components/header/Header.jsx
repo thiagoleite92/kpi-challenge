@@ -12,7 +12,7 @@ function Header () {
 
   useEffect(() => {
     const checkLocalStorage = () => {
-      if (!fetchUserInfo()) navigate('/forms')
+      if (!fetchUserInfo()) navigate('/results')
       setHeaderInfo(fetchUserInfo())
     }
     checkLocalStorage()

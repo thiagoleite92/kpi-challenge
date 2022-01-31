@@ -1,13 +1,15 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import './modal.css'
 import MainContext from '../../context/MainContext'
 import CheckIcon from '@mui/icons-material/Check'
 import Message from './Message'
 import ExitButton from '../buttons/ExitButton'
-import { saveUserInfo } from '../../utils/localStorage'
+import { fetchUserInfo, saveUserInfo } from '../../utils/localStorage'
 
 function Modal ({ setModal }) {
+  const navigate = useNavigate()
   const {
     userInfo,
     setUserInfo,
@@ -16,9 +18,16 @@ function Modal ({ setModal }) {
     setAnswers
   } = useContext(MainContext)
 
+  useEffect(() => {
+    const checkLocalStorage = () => {
+      if (fetchUserInfo()) navigate('/results')
+      setHeaderInfo(fetchUserInfo())
+    }
+    checkLocalStorage()
+  }, [navigate, setHeaderInfo])
+
   const handleInputChange = ({ target }) => {
     const { name, value } = target
-
     setUserInfo((oldState) => ({
       ...oldState,
       [name]: value
