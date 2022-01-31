@@ -3,20 +3,20 @@ import { useNavigate } from 'react-router-dom'
 import MainContext from '../../context/MainContext'
 import ExitButton from '../buttons/ExitButton'
 import Logo from '../logo/Logo'
+import { fetchUserInfo } from '../../utils/localStorage'
 import './header.css'
 
 function Header () {
-  const { headerInfo: { name, email } } = useContext(MainContext)
+  const { headerInfo: { name, email }, setHeaderInfo } = useContext(MainContext)
   const navigate = useNavigate()
 
   useEffect(() => {
-    const checkHeaderInfo = () => {
-      if (!name === '' || email === '') {
-        navigate('/forms')
-      }
+    const checkLocalStorage = () => {
+      if (!fetchUserInfo()) navigate('/forms')
+      setHeaderInfo(fetchUserInfo())
     }
-    checkHeaderInfo()
-  }, [email, name, navigate])
+    checkLocalStorage()
+  }, [navigate, setHeaderInfo])
 
   return (
     <header className='header'>

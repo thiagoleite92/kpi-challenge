@@ -27,9 +27,7 @@ function Modal ({ setModal }) {
 
   const handleContinueButton = () => {
     setHeaderInfo(userInfo)
-    console.log('oi')
     saveUserInfo(userInfo)
-    console.log('oi')
     setUserInfo({
       name: '',
       email: ''
