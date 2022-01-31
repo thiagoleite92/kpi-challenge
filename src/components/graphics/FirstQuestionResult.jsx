@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { ResponsiveBar } from '@nivo/bar'
 import { getFirstCollection } from '../../database/Api'
 import { formatFirstCollection } from '../../utils/formatdata'
+import Loading from '../loading/Loading'
 
 const FirstQuestionResult = () => {
   const [feedBacks, setFeedBacks] = useState([])
@@ -16,13 +17,15 @@ const FirstQuestionResult = () => {
       const formatedSecondCollection = formatFirstCollection(parseSecondCollection)
 
       setFeedBacks(formatedSecondCollection)
-      setLoading(false)
+      setTimeout(() => {
+        setLoading(false)
+      }, 2000)
     }
     fetchFeedbacks()
   }, [])
 
   if (loading) {
-    return <div>Carregando gráfico</div>
+    return (<Loading />)
   }
 
   return (

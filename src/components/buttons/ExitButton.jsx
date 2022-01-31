@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import MainContext from '../../context/MainContext'
 import LogoutIcon from '@mui/icons-material/Logout'
 import { useNavigate } from 'react-router-dom'
+import { clearUserInfo } from '../../utils/localStorage'
 
 function ExitButton () {
   const {
@@ -12,6 +13,7 @@ function ExitButton () {
   const navigate = useNavigate()
 
   const redirectHomePage = () => {
+    clearUserInfo()
     setUserInfo({
       name: '',
       email: ''
@@ -28,6 +30,7 @@ function ExitButton () {
     })
     navigate('/home')
   }
+
   return (
     <button
       type='button'

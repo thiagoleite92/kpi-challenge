@@ -8,7 +8,12 @@ function fetchUserInfo () {
   return user
 }
 
+function clearUserInfo () {
+  localStorage.clear()
+}
+
 export {
   saveUserInfo,
-  fetchUserInfo
+  fetchUserInfo,
+  clearUserInfo
 }
