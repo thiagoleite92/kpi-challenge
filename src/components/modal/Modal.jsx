@@ -5,6 +5,7 @@ import MainContext from '../../context/MainContext'
 import CheckIcon from '@mui/icons-material/Check'
 import Message from './Message'
 import ExitButton from '../buttons/ExitButton'
+import { saveUserInfo } from '../../utils/localStorage'
 
 function Modal ({ setModal }) {
   const {
@@ -26,7 +27,9 @@ function Modal ({ setModal }) {
 
   const handleContinueButton = () => {
     setHeaderInfo(userInfo)
-    setModal(false)
+    console.log('oi')
+    saveUserInfo(userInfo)
+    console.log('oi')
     setUserInfo({
       name: '',
       email: ''
@@ -35,6 +38,7 @@ function Modal ({ setModal }) {
       firstQuestion: '',
       secondQuestion: ''
     })
+    setModal(false)
   }
 
   return (
