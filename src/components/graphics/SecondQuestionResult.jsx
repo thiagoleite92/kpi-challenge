@@ -27,7 +27,7 @@ const SecondQuestionResult = () => {
   }
 
   return (
-    <main style={{ height: '500px' }}>
+    <main style={{ height: '400px' }}>
       <div>Seu nível de satisfação?</div>
       <ResponsiveBar
         data={feedBacks}

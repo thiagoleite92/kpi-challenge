@@ -1,18 +1,19 @@
 .graphic-main-container {
-  background-color: #0067ac;
+  background-color: #f8f8f8;
   width: 100%;
   height: 100vh;
 }
 
 .graphic-container {
-  background-color: rgb(253, 252, 252);
+  background-color: rgb(255, 248, 248);
   width: 50%;
-  height: 700px;
+  height: 500px;
   position: absolute;
-  margin-top: 50px;
+  margin-top: 100px;
   margin-right: 25%;
   margin-left: 25%;
-  padding: 50px
+  padding: 50px;
+  border: solid 1px #0067ac;
 }
 
 .btn-graphic-container {
@@ -57,7 +58,7 @@
   border: none;
   border-radius: 5px;
   margin: 25px auto;
-  background-color: #ac0600;
+  background-color: #0067ac;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   cursor: pointer;
   width: 100px;

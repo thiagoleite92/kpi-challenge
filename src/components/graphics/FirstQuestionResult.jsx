@@ -26,7 +26,7 @@ const FirstQuestionResult = () => {
   }
 
   return (
-    <div style={{ height: '500px' }}>
+    <div style={{ height: '400px' }}>
       <div>Quantas pessoas tem sua equipe?</div>
       <ResponsiveBar
         data={feedBacks}
